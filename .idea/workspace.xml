@@ -4,32 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="1.0.0 基本实现了一个命令行版本的图书管理系统。">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagementSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profile.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/HelpMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/Library.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/LibraryChanger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/LibraryDeleter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/LibrarySelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/OPHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/exception/BookBusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/exception/BookNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/exception/IllegalPriceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/exception/InsufficientParameterException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/exception/InvalidDateFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/exception/InvalidPriceRangeException.java" afterDir="false" />
+    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="1.0.1 没有新增功能，只是对原有代码结构的改造。">
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/dao/JDBCActuator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/service/BooksService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/SQLStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/AddStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/ChangeAuthorByIdStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/ChangeCategoryByIdStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/ChangeDateByIdStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/ChangeNameByIdStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/ChangePriceByIdStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/ChangePublisherByIdStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/DeleteByAuthorStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/DeleteByCategoryStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/DeleteByIdStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/DeleteByNameStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/DeleteByPriceRangeStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/DeleteByPublisherStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/SQLStrategyEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/SearchAllStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/SearchByAuthorStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/SearchByCategoryStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/SearchByIdStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/SearchByNameStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/SearchByPriceRangeStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/strategy/book/SearchByPublisherStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/support/BookResultSetHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/support/ResultSetHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagementSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/HelpMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/support/HelpMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/Library.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/LibraryChanger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/LibraryDeleter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/LibrarySelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/OPHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/OPHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/support/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +52,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
       </list>
@@ -61,6 +75,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -73,6 +91,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="club.xiaozhe.library.service.strategy.change" />
+      <recent name="club.xiaozhe.library.service.strategy.delete" />
+      <recent name="club.xiaozhe.library.service.strategy" />
       <recent name="club.xiaozhe.Library" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
@@ -80,13 +101,15 @@
       <recent name="club.xiaozhe.Library.BookField" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="club.xiaozhe.library.strategy" />
+      <recent name="club.xiaozhe.library.service.strategy.search" />
       <recent name="club.xiaozhe.library.exception" />
       <recent name="club.xiaozhe.Library" />
     </key>
   </component>
-  <component name="RunManager" selected="Java 草稿.Mission">
+  <component name="RunManager" selected="应用程序.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="club.xiaozhe.library.cli.Main" />
       <module name="LibraryManagementSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Java 草稿.Mission" />
         <item itemvalue="应用程序.Main" />
+        <item itemvalue="Java 草稿.Mission" />
       </list>
     </recent_temporary>
   </component>
@@ -122,11 +145,7 @@
     <MESSAGE value="1.0.0 基本实现了一个命令行版本的图书管理系统。" />
     <option name="LAST_COMMIT_MESSAGE" value="1.0.0 基本实现了一个命令行版本的图书管理系统。" />
   </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="op" language="JAVA" />
-      </configuration>
-    </watches-manager>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LibraryManagementSystem$Main.ic" NAME="Main 覆盖结果" MODIFIED="1761063758696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package club.xiaozhe.library;
+package club.xiaozhe.library.model;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -179,5 +179,13 @@ public class Book {
                 "price: " + price + '\n' +
                 "categories: " + Arrays.toString(categories) + '\n' +
                 '}';
+    }
+
+    /**
+     * 提供给添加语句传参的方法,顺序遵循建表字段的顺序
+     * @return 参数数组
+     */
+    public Object[] toParams() {
+        return new Object[]{id, name, getAuthorsStr(), publisher, publicationDate, price, getCategoriesStr()};
     }
 }

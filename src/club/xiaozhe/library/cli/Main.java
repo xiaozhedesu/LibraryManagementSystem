@@ -1,4 +1,6 @@
-import club.xiaozhe.library.OPHandler;
+package club.xiaozhe.library.cli;
+
+import club.xiaozhe.library.dao.JDBCActuator;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -38,6 +40,7 @@ public class Main {
 
         readProperties();
         Connection connection = connect();
+        JDBCActuator.setConnection(connection);
         System.out.println("数据库连接成功。");
         handler = new OPHandler(connection);
     }
@@ -58,7 +61,6 @@ public class Main {
         String psw = (String) properties.get("database.password");
 
         if (url == null || user == null || psw == null) {
-            System.out.println(url + user + psw);
             throw new RuntimeException("配置文件中缺少连接数据库相关的配置！");
         }
 

@@ -1,14 +1,16 @@
-package club.xiaozhe.library;
+package club.xiaozhe.library.support;
 
 import club.xiaozhe.library.exception.BookBusinessException;
 import club.xiaozhe.library.exception.IllegalPriceException;
 import club.xiaozhe.library.exception.InsufficientParameterException;
 import club.xiaozhe.library.exception.InvalidPriceRangeException;
+import club.xiaozhe.library.model.Book;
 
 import java.math.BigDecimal;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.*;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Optional;
+import java.util.Scanner;
 
 public final class Utils {
     private static final Scanner scan = new Scanner(System.in);
@@ -79,27 +81,39 @@ public final class Utils {
     }
 
     /**
-     * 将查找后的ResultSet对象转化为List返回，因为使用地点多于是封装一个函数
+     * <p>将字符串值变为模糊匹配格式 <b>%value%</b>。
+     * <p>注意：仅做简单拼接，未处理 SQL 特殊字符转义。
      *
-     * @param set 执行SELECT语句后返回的ResultSet对象
-     * @return 查找语句获取到的书籍信息列表
+     * @return 套%壳的值串
      */
-    public static ArrayList<Book> booksSet2List(ResultSet set) throws SQLException {
-        ArrayList<Book> result = new ArrayList<>();
-        while (set.next()) {
-            result.add(new Book(
-                    set.getString("id"),
-                    set.getString("name"),
-                    set.getString("authors"),
-                    set.getString("publisher"),
-                    set.getString("publicationDate"),
-                    set.getBigDecimal("price"),
-                    set.getString("categories")
-            ));
-        }
-        return result;
+    public static String likeOf(String val) {
+        return '%' + val + '%';
     }
 
+    /**
+     * 添加书籍时控制输入的代码
+     *
+     * @return 将用户输入的数据打包的Book
+     */
+    public static Book scanBook() {
+        String name = scanName();
+        String id = String.valueOf(name.hashCode());
+        String authors = scanAuthors();
+        String publisher = scanPublisher();
+        Optional<String> data;
+        do {
+            data = scanPublicationDate();
+        } while (data.isEmpty());
+        String publicationDate = data.get();
+        BigDecimal price = scanPrice();
+        while (!isPositive(price)) {
+            System.out.println("❌ 价格需为正整数！");
+            price = scanPrice();
+        }
+        String categories = scanCategory();
+
+        return new Book(id, name, authors, publisher, publicationDate, price, categories);
+    }
 
     /**
      * 输入书名

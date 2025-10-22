@@ -1,12 +1,15 @@
-package club.xiaozhe.library;
+package club.xiaozhe.library.cli;
 
+import club.xiaozhe.library.dao.JDBCActuator;
 import club.xiaozhe.library.exception.BookBusinessException;
+import club.xiaozhe.library.model.Book;
+import club.xiaozhe.library.service.BooksService;
+import club.xiaozhe.library.support.HelpMessage;
+import club.xiaozhe.library.support.Utils;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 
 /**
@@ -15,7 +18,6 @@ import java.util.Scanner;
 public class OPHandler {
     private static final Scanner scan = new Scanner(System.in);
     private final Connection connection;
-    private final Library library;
 
     /**
      * 构造函数
@@ -24,7 +26,6 @@ public class OPHandler {
      */
     public OPHandler(Connection connection) {
         this.connection = connection;
-        this.library = new Library(connection);
     }
 
     /**
@@ -68,10 +69,13 @@ public class OPHandler {
      */
     private void showSize() {
         try {
-            long size = library.booksSize();
+            long size = JDBCActuator.query("SELECT COUNT(*) FROM books", (set) -> {
+                set.next();
+                return List.of(set.getLong(1));
+            }).get(0);
             System.out.println("Books中共有 " + size + " 项。");
         } catch (SQLException e) {
-            System.out.println("长度获取失败：" + e.getMessage());
+            System.out.println("❌ 长度获取失败：" + e.getMessage());
         }
     }
 
@@ -80,24 +84,16 @@ public class OPHandler {
      */
     private void search() {
         System.out.print("输入搜索条件：");
-        String[] op = scan.nextLine().trim().split("\\s+", 2);
+        String op = scan.next();
+        String param = scan.nextLine().trim();
 
-        if ("help".equals(op[0])) {
+        if ("help".equals(op)) {
             System.out.println(HelpMessage.HELP_SEARCH);
             return;
         }
 
-        List<Book> books;
         try {
-            if ("all".equals(op[0])) {
-                books = library.search(op[0], "");
-            } else if (op.length >= 2) {
-                books = library.search(op[0], op[1]);
-            } else {
-                System.out.println("❌ 参数不足！");
-                return;
-            }
-
+            List<Book> books = BooksService.search(op,param);
             books.forEach(System.out::println);
             System.out.println("共" + books.size() + "项。");
         } catch (SQLException e) {
@@ -112,23 +108,19 @@ public class OPHandler {
      */
     private void change() {
         System.out.print("输入更改指令：");
-        String[] op = scan.nextLine().trim().split("\\s+", 3);
+        String op = scan.next();
+        String param = scan.nextLine().trim();
 
-        if ("help".equals(op[0])) {
+        if ("help".equals(op)) {
             System.out.println(HelpMessage.HELP_CHANGE);
             return;
         }
 
-        if (op.length < 3) {
-            System.out.println("❌ 参数不足！");
-            return;
-        }
-
         try {
-            int row = library.changeById(op[0], op[1], op[2]);
+            int row = BooksService.change(op,param);
             System.out.println("改变了 " + row + " 行。");
         } catch (SQLException e) {
-            System.out.println("修改书籍发生错误：" + e.getMessage());
+            System.out.println("❌ 修改书籍发生错误：" + e.getMessage());
         } catch (BookBusinessException e) {
             System.out.println("❌ " + e.getMessage());
         }
@@ -138,10 +130,10 @@ public class OPHandler {
      * add指令 ：实现添加功能。
      */
     private void add() {
-        Book book = scanBook();
+        Book book = Utils.scanBook();
         try {
             if (Utils.addDoubleCheck(book)) {
-                int row = library.add(book);
+                int row = BooksService.add(book);
                 System.out.println(row == 1 ? "✅ 添加成功。" : "❌ 添加失败。");
             } else {
                 System.out.println("❌ 已取消添加。");
@@ -152,50 +144,21 @@ public class OPHandler {
     }
 
     /**
-     * 添加书籍时控制输入的代码
-     *
-     * @return 将用户输入的数据打包的Book
-     */
-    private Book scanBook() {
-        String name = Utils.scanName();
-        String id = String.valueOf(name.hashCode());
-        String authors = Utils.scanAuthors();
-        String publisher = Utils.scanPublisher();
-        Optional<String> data;
-        do {
-            data = Utils.scanPublicationDate();
-        } while (data.isEmpty());
-        String publicationDate = data.get();
-        BigDecimal price = Utils.scanPrice();
-        while (!Utils.isPositive(price)) {
-            System.out.println("❌ 价格需为正整数！");
-            price = Utils.scanPrice();
-        }
-        String categories = Utils.scanCategory();
-
-        return new Book(id, name, authors, publisher, publicationDate, price, categories);
-    }
-
-    /**
      * delete指令：实现删除功能。
      */
     private void delete() {
         System.out.print("输入删除条件：");
-        String[] op = scan.nextLine().trim().split("\\s+", 2);
+        String op = scan.next();
+        String param = scan.nextLine().trim();
 
-        if ("help".equals(op[0])) {
+        if ("help".equals(op)) {
             System.out.println(HelpMessage.HELP_DELETE);
-            return;
-        }
-
-        if (op.length < 2) {
-            System.out.println("❌ 参数不足！");
             return;
         }
 
         List<Book> books;
         try {
-            books = library.search(op[0], op[1]);
+            books = BooksService.search(op,param);
         } catch (SQLException e) {
             System.out.println("❌ 查询书籍发生错误：" + e.getMessage());
             return;
@@ -211,7 +174,7 @@ public class OPHandler {
 
         try {
             if (Utils.deleteDoubleCheck(books)) {
-                int row = library.delete(op[0], op[1]);
+                int row = BooksService.delete(op,param);
                 if (row != 0) System.out.println("✅ 删除成功，共 " + row + " 项。");
             } else {
                 System.out.println("❌ 已取消删除。");

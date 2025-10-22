@@ -1,4 +1,4 @@
-package club.xiaozhe.library;
+package club.xiaozhe.library.support;
 
 public final class HelpMessage {
     public static final String HELP = """
@@ -30,14 +30,14 @@ public final class HelpMessage {
             priceRange <min> <max> 按照价格区间删除（批量）""";
     public static final String HELP_CHANGE = """
             已支持的指令(change)：
-            name <id> <name>         根据id修改书名
-            authors <id> <authors>   根据id整批替换作者
-            addAuthor <id> <author>  根据id追加一位作者
-            publisher <id> <publisher> 根据id修改出版社
-            date <id> <yyyy-MM-dd>   根据id修改出版日期
-            price <id> <price>       根据id修改价格（正数）
-            categories <id> <categories> 根据id整批替换分类
-            addCategory <id> <category> 根据id追加一个分类""";
+            name <name> <id>         根据id修改书名
+            authors <authors> <id>   根据id整批替换作者
+            addAuthor <author> <id>  根据id追加一位作者
+            publisher <publisher> <id> 根据id修改出版社
+            date <yyyy-MM-dd> <id>   根据id修改出版日期
+            price <price> <id>       根据id修改价格（正数）
+            categories <categories> <id> 根据id整批替换分类
+            addCategory <category> <id>  根据id追加一个分类""";
 
     private HelpMessage() {
     }
