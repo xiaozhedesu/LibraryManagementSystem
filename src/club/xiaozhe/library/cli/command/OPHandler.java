@@ -32,6 +32,7 @@ public class OPHandler {
             case "help delete" -> new ShowHelpMessageCommand("delete");
             case "help search" -> new ShowHelpMessageCommand("search");
             case "add" -> new AddBookCommand();
+            case "adds" -> new AddBooksCommand(scan);
             case "delete" -> new DeleteBooksCommand(scan);
             case "change" -> new ChangeBooksCommand(scan);
             case "search" -> new SearchBooksCommand(scan);

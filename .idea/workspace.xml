@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="1.0.1 没有新增功能，只是对原有代码结构的改造。">
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/AddBookCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/ChangeBooksCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/DeleteBooksCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/ExitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/SearchBooksCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/ShowHelpMessageCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/ShowSizeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/UnsupportedCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="1.0.2 将OPHandler扩展成命令模式实现">
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/AddBooksCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagementSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/OPHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/OPHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/OPHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/OPHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +56,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="club.xiaozhe.library.cli.command" />
       <recent name="club.xiaozhe.library.service.strategy.change" />
       <recent name="club.xiaozhe.library.service.strategy.delete" />
       <recent name="club.xiaozhe.library.service.strategy" />
@@ -122,14 +111,33 @@
       <option name="project" value="LOCAL" />
       <updated>1761104247237</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1.0.2 将OPHandler扩展成命令模式实现">
+      <created>1762608258076</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762608258076</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1.0.0 基本实现了一个命令行版本的图书管理系统。" />
     <MESSAGE value="1.0.1 没有新增功能，只是对原有代码结构的改造。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.1 没有新增功能，只是对原有代码结构的改造。" />
+    <MESSAGE value="1.0.2 将OPHandler扩展成命令模式实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.2 将OPHandler扩展成命令模式实现" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LibraryManagementSystem$Main.ic" NAME="Main 覆盖结果" MODIFIED="1761063758696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
