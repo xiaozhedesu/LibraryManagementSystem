@@ -30,3 +30,6 @@ bin/
 
 ### properties ###
 profile.properties
+
+### JavaDoc ###
+doc
