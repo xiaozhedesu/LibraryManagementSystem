@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="1.0.2 将OPHandler扩展成命令模式实现">
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/AddBooksCommand.java" afterDir="false" />
+    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="1.0.3 添加添加多个书籍功能">
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/components/BooksTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/components/InputLinePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/pages/AddPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/pages/SearchPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/OPHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/command/OPHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +22,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -47,7 +51,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Project/Coding/LibraryManagementSystem&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/xiaozhedesu/AppData/Roaming/JetBrains/IdeaIC2023.1/scratches/BeforeCopy&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -62,6 +66,9 @@
       <recent name="club.xiaozhe.library.service.strategy" />
       <recent name="club.xiaozhe.Library" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xiaozhedesu\AppData\Roaming\JetBrains\IdeaIC2023.1\scratches\BeforeCopy" />
+    </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="club.xiaozhe.Library.Utils" />
       <recent name="club.xiaozhe.Library.BookField" />
@@ -73,10 +80,23 @@
       <recent name="club.xiaozhe.Library" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.Main">
+  <component name="RunManager" selected="应用程序.club.xiaozhe.library.gui.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="club.xiaozhe.library.cli.Main" />
       <module name="LibraryManagementSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="club.xiaozhe.library.gui.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="club.xiaozhe.library.gui.Main" />
+      <module name="LibraryManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="club.xiaozhe.library.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,9 +108,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/Test.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.club.xiaozhe.library.gui.Main" />
         <item itemvalue="应用程序.Main" />
+        <item itemvalue="Java 草稿.Test" />
+        <item itemvalue="Java 草稿.Mission" />
         <item itemvalue="Java 草稿.Mission" />
       </list>
     </recent_temporary>
@@ -118,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1762608258076</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.0.3 添加添加多个书籍功能">
+      <created>1762609112110</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762609112110</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,7 +174,8 @@
     <MESSAGE value="1.0.0 基本实现了一个命令行版本的图书管理系统。" />
     <MESSAGE value="1.0.1 没有新增功能，只是对原有代码结构的改造。" />
     <MESSAGE value="1.0.2 将OPHandler扩展成命令模式实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.2 将OPHandler扩展成命令模式实现" />
+    <MESSAGE value="1.0.3 添加添加多个书籍功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.3 添加添加多个书籍功能" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LibraryManagementSystem$Main.ic" NAME="Main 覆盖结果" MODIFIED="1761063758696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
