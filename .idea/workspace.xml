@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="1.0.3 添加添加多个书籍功能">
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/components/BooksTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/components/InputLinePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/pages/AddPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/pages/SearchPage.java" afterDir="false" />
+    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="添加：GUI界面的查找、添加页面">
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/support/ConnectDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="33mKogKnr0CXca5Nqp9CttuDsD2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -155,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1762609112110</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加：GUI界面的查找、添加页面">
+      <created>1763540872599</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763540872599</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,7 +183,8 @@
     <MESSAGE value="1.0.1 没有新增功能，只是对原有代码结构的改造。" />
     <MESSAGE value="1.0.2 将OPHandler扩展成命令模式实现" />
     <MESSAGE value="1.0.3 添加添加多个书籍功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.3 添加添加多个书籍功能" />
+    <MESSAGE value="添加：GUI界面的查找、添加页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加：GUI界面的查找、添加页面" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LibraryManagementSystem$Main.ic" NAME="Main 覆盖结果" MODIFIED="1761063758696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
