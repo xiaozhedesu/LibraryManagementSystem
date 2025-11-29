@@ -1,5 +1,7 @@
 package club.xiaozhe.library.gui.pages;
 
+import club.xiaozhe.library.gui.components.BookFieldArrays;
+import club.xiaozhe.library.gui.components.BookFieldSearchBox;
 import club.xiaozhe.library.gui.components.BooksTable;
 import club.xiaozhe.library.model.Book;
 import club.xiaozhe.library.service.BooksService;
@@ -12,18 +14,6 @@ import java.util.List;
  * 搜索页面
  */
 public class SearchPage extends JPanel {
-    /**
-     * 用于显示模式的数组
-     */
-    private static final String[] MODES = {
-            "所有", "id", "书名", "作者", "出版社", "分类"
-    };
-    /**
-     * 用于执行对应模式的数组
-     */
-    private static final String[] OPS = {
-            "all", "id", "name", "author", "publisher", "category"
-    };
     /**
      * 查找模式选择框
      */
@@ -48,27 +38,19 @@ public class SearchPage extends JPanel {
      */
     private void addSelectPanel() {
         JPanel panel = new JPanel();
-        panel.add(createSelectBox());
+        panel.add(select = new BookFieldSearchBox());
         panel.add(createInputArea());
         panel.add(createSubmitButton());
         add(panel, BorderLayout.NORTH);
     }
 
-    /**
-     * 多选盒控件
-     */
-    private JComboBox<String> createSelectBox() {
-        select = new JComboBox<>();
-        select.setModel(new DefaultComboBoxModel<>(MODES));
-        return select;
-    }
 
     /**
      * 输入控件
      */
     private JTextField createInputArea() {
         input = new JTextField(30);
-        input.addActionListener(e -> updateTable(OPS[select.getSelectedIndex()], input.getText()));
+        input.addActionListener(e -> updateTable(BookFieldArrays.FIELDS[select.getSelectedIndex()], input.getText()));
         return input;
     }
 
@@ -77,7 +59,7 @@ public class SearchPage extends JPanel {
      */
     private JButton createSubmitButton() {
         JButton submit = new JButton("查询");
-        submit.addActionListener(e -> updateTable(OPS[select.getSelectedIndex()], input.getText()));
+        submit.addActionListener(e -> updateTable(BookFieldArrays.FIELDS[select.getSelectedIndex()], input.getText()));
         return submit;
     }
 

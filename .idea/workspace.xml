@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="添加：GUI界面的查找、添加页面">
-      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/support/ConnectDatabase.java" afterDir="false" />
+    <list default="true" id="21516da6-fa4e-4c43-bf31-8d005657fa78" name="更改" comment="修改：在添加书籍成功后清空输入区域">
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/components/BookFieldArrays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/components/BookFieldSearchBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/pages/DeletePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/cli/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/xiaozhe/library/gui/pages/SearchPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +73,7 @@
       <recent name="C:\Users\xiaozhedesu\AppData\Roaming\JetBrains\IdeaIC2023.1\scratches\BeforeCopy" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="club.xiaozhe.library.gui.components.BookFieldArrays" />
       <recent name="club.xiaozhe.Library.Utils" />
       <recent name="club.xiaozhe.Library.BookField" />
     </key>
@@ -163,7 +166,21 @@
       <option name="project" value="LOCAL" />
       <updated>1763540872599</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修改：将CMD和GUI两部分连接数据库的部分抽离成ConnectDatabase类使用。">
+      <created>1763542613497</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763542613497</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修改：在添加书籍成功后清空输入区域">
+      <created>1764402665373</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764402665373</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,7 +201,9 @@
     <MESSAGE value="1.0.2 将OPHandler扩展成命令模式实现" />
     <MESSAGE value="1.0.3 添加添加多个书籍功能" />
     <MESSAGE value="添加：GUI界面的查找、添加页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加：GUI界面的查找、添加页面" />
+    <MESSAGE value="修改：将CMD和GUI两部分连接数据库的部分抽离成ConnectDatabase类使用。" />
+    <MESSAGE value="修改：在添加书籍成功后清空输入区域" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改：在添加书籍成功后清空输入区域" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LibraryManagementSystem$Main.ic" NAME="Main 覆盖结果" MODIFIED="1761063758696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
