@@ -10,7 +10,47 @@
 
 2025年10月8日
 
+## 运行
+
+命令行程序通过`cli\Main.java`启动、swing程序在`gui\Main.java`启动，启动前请确保`profile.properties`文件存在于根目录中。
+
+数据库不在本仓库内，需要自行配置：
+
+### profile.properties
+``` properties
+# database
+# 数据库jdbc链接
+database.url=jdbc:mysql://localhost:3307/Library_Management_System?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+# 数据库账号
+database.username=root
+# 数据库密码
+database.password=sanachan
+```
+
+### 数据表
+#### Book建表语句
+```roomsql
+CREATE TABLE Books (
+    id              VARCHAR(32)  PRIMARY KEY,
+    name            VARCHAR(255) NOT NULL,
+    authors         VARCHAR(255) NOT NULL,
+    publisher       VARCHAR(255) NOT NULL,
+    publicationDate VARCHAR(255) NOT NULL,
+    price           DECIMAL(10,2) NOT NULL,
+    categories      VARCHAR(255) NOT NULL
+);
+```
+
 ## log
+
+### 2025年11月29日
+课多有点怠惰，竟拖到这个时候才更新。不过我觉得学校排课也有点那啥，几门核心课放在一个学期学，加上水课每周工作日平均要上3节课，根本提不起精力来😴。
+
+还是回到项目上吧，我尝试使用swing编写图形化界面，但是写着写着越发感觉繁琐和乏味，不禁觉得前端真好开发，于是草草就结束了gui包的内容。
+
+相比于swing，使用前端三件套显然更易开发、微信小程序也是基于前端、暂时还没想过做安卓开发（，作为一个只想多思考后端的活、前端不喜欢写样式的人，我已经准备投入vue.js + element-plus的怀抱了
+
+下个月初即将前往学校的劳动教育实践项目，网络质量差意味着我不好进行开发。我打算在学校任务结束后起个新仓库开始学习使用spring boot 开发后台程序，让Java只做后端的活。
 
 ### 2025年10月22日
 
