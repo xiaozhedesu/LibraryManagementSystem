@@ -1,8 +1,6 @@
 package club.xiaozhe.library.gui;
 
-import club.xiaozhe.library.gui.pages.AddPage;
-import club.xiaozhe.library.gui.pages.DeletePage;
-import club.xiaozhe.library.gui.pages.SearchPage;
+import club.xiaozhe.library.gui.pages.*;
 import club.xiaozhe.library.support.ConnectDatabase;
 
 import javax.swing.*;
@@ -49,6 +47,7 @@ public class Main extends JFrame {
         // TODO 添加页面
         tabbedPane.add(new SearchPage(), "查找");
         tabbedPane.add(new AddPage(), "添加");
+        tabbedPane.add(new ChangePage(), "修改");
         tabbedPane.add(new DeletePage(), "删除");
         add(tabbedPane);
     }

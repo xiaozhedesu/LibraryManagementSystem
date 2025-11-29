@@ -1,21 +1,31 @@
 package club.xiaozhe.library.gui.pages;
 
 import club.xiaozhe.library.exception.BookBusinessException;
-import club.xiaozhe.library.gui.components.BookFieldArrays;
-import club.xiaozhe.library.gui.components.BookFieldSearchBox;
 import club.xiaozhe.library.service.BooksService;
 
 import javax.swing.*;
 import java.sql.SQLException;
 
 public class DeletePage extends JPanel {
+    public static final String[] SHOW_MODES = {
+            "id", "书名", "作者", "出版社", "分类"
+    };
+    public static final String[] FIELDS = {
+            "id", "name", "author", "publisher", "category"
+    };
     JComboBox<String> select;
     JTextField input;
 
     public DeletePage() {
-        add(select = new BookFieldSearchBox());
+        add(createSelectBox());
         add(createInputArea());
         add(createSubmitButton());
+    }
+
+    private JComboBox<String> createSelectBox() {
+        select = new JComboBox<>();
+        select.setModel(new DefaultComboBoxModel<>(SHOW_MODES));
+        return select;
     }
 
     private JTextField createInputArea() {
@@ -43,7 +53,7 @@ public class DeletePage extends JPanel {
             return;
 
         try {
-            int row = BooksService.delete(BookFieldArrays.FIELDS[select.getSelectedIndex()], input.getText());
+            int row = BooksService.delete(FIELDS[select.getSelectedIndex()], input.getText());
             JOptionPane.showMessageDialog(DeletePage.this,
                     "删除了" + row + "项。",
                     "提示", JOptionPane.INFORMATION_MESSAGE);
