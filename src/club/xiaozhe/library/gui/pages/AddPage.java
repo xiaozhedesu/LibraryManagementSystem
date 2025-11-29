@@ -51,6 +51,18 @@ public class AddPage extends JPanel {
     }
 
     /**
+     * 清空输入内容
+     */
+    private void clearInputArea() {
+        name.setText("");
+        authors.setText("");
+        publisher.setText("");
+        publisherDate.setText("");
+        price.setText("");
+        categories.setText("");
+    }
+
+    /**
      * 向数据库添加书籍
      */
     private void addBook() {
@@ -71,6 +83,7 @@ public class AddPage extends JPanel {
                 JOptionPane.showMessageDialog(AddPage.this,
                         "添加成功！",
                         "提示", JOptionPane.INFORMATION_MESSAGE);
+                clearInputArea();
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(AddPage.this,

@@ -16,4 +16,8 @@ public class InputLinePanel extends JPanel {
     public String getText() {
         return input.getText();
     }
+
+    public void setText(String str) {
+        input.setText(str);
+    }
 }
